@@ -6,6 +6,8 @@
 
 keywords: [[https://srfi.schemers.org/?keywords=i/o][I/O]]
 
+library-name: with-shared-structure
+
 This repository hosts [[https://srfi.schemers.org/srfi-38/][SRFI 38]]: External Representation for Data With Shared Structure, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
 This SRFI is in /final/ status.
