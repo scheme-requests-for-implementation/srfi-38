@@ -71,13 +71,14 @@ which are <tt>(eqv?)</tt> but not <tt>(eq?)</tt>.
 </p>
 <p>
 As an example of the second problem,  The results of evaluating
+</p>
 <pre>
 (begin (define a (cons 'val1 'val2))
        (set-cdr! a a)
        (write a))
 </pre>
 
-are undefined; in R5RS parlance, calling write on such a structure
+<p>are undefined; in R5RS parlance, calling write on such a structure
 "is an error", but not one that is necessarily
 signalled. The routine is permitted to print a nonstandard notation
 such as the one proposed in this standard or a different one, fail
@@ -113,7 +114,7 @@ section 7 of R5RS, except that the single production
 &lt;datum&gt; --&gt; &lt;simple datum&gt; | &lt;compound datum&gt; 
 
 </pre>
-Is replaced by the following five productions.
+<p>Is replaced by the following five productions.</p>
 <pre>
 
 &lt;datum&gt; --&gt; &lt;defining datum&gt; | &lt;nondefining datum&gt; | &lt;defined datum&gt;
@@ -126,10 +127,9 @@ Is replaced by the following five productions.
 
 &lt;indexnum&gt; --&gt; &lt;digit 10&gt;+
 </pre>
-</p>
 
 <h2>New Procedures</h2>
-<p>
+
 <pre id="write-with-shared-structure">
 
 [[library procedure]] (write-with-shared-structure obj)
@@ -137,7 +137,7 @@ Is replaced by the following five productions.
 [[library procedure]] (write-with-shared-structure obj port optarg)
 
 </pre>
-
+<p>
 Writes a written representation of obj to the given port. Strings that
 appear in the written representation are enclosed in doublequotes, and
 within those strings backslash and doublequote characters are escaped
@@ -180,7 +180,7 @@ return values. The reference implementation ignores optarg.
 </p>
 <p>
 
-For example, the code
+For example, the code</p>
 <pre>
 
 (begin (define a (cons 'val1 'val2))
@@ -189,7 +189,7 @@ For example, the code
 
 </pre>
 
-should produce the output <tt> #1=(val1 . #1#) </tt>.  This shows a cons
+<p>should produce the output <tt> #1=(val1 . #1#) </tt>.  This shows a cons
 cell whose cdr contains itself.
 
 </p><p>
@@ -200,7 +200,7 @@ cell whose cdr contains itself.
 [[library procedure]] (read-with-shared-structure  port)
 
 </pre>
-
+<p>
 <tt>(read-with-shared-structure)</tt> converts the external
 representations of Scheme objects produced by
 <tt>(write-with-shared-structure)</tt> into scheme objects.  That is,
