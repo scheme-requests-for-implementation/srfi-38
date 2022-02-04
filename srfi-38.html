@@ -101,14 +101,15 @@ The extended functionality described below in the implementation of
 </p>
 
 <h2>Specification</h2>
-<p>
 
 <h2> Formal Grammar of the New External Representation</h2>
+<p>
 This SRFI creates an alternative external representation for data
 written and read under <tt>(write/ss)</tt> and <tt>(read/ss)</tt>.
 It is identical to the grammar for external representation for data
 written and read under <tt>(write)</tt> and <tt>(read)</tt> given in
 section 7 of R5RS, except that the single production
+</p>
 <pre>
 
 &lt;datum&gt; --&gt; &lt;simple datum&gt; | &lt;compound datum&gt; 
@@ -191,8 +192,7 @@ For example, the code</p>
 
 <p>should produce the output <tt> #1=(val1 . #1#) </tt>.  This shows a cons
 cell whose cdr contains itself.
-
-</p><p>
+</p>
 
 <pre id="read-with-shared-structure">
 
