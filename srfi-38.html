@@ -1,5 +1,10 @@
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN" "http://www.w3.org/TR/html.dtd">
+<!DOCTYPE html>
 <html lang="en">
+<!--
+SPDX-FileCopyrightText: 2016 Ray Dillinger
+
+SPDX-License-Identifier: MIT
+-->
   <head>
     <title>SRFI 38: External Representation for Data With Shared Structure</title>
     <meta charset="utf-8" />
@@ -24,7 +29,7 @@
 
 <h2>Abstract</h2>
 <p>
-This SRFI proposes <tt>(write-with-shared-structure)</tt> and 
+This SRFI proposes <tt>(write-with-shared-structure)</tt> and
 <tt>(read-with-shared-structure)</tt>, procedures for writing
 and reading external representations of data containing shared
 structure.  These procedures implement a proposed standard
@@ -112,7 +117,7 @@ section 7 of R5RS, except that the single production
 </p>
 <pre>
 
-&lt;datum&gt; --&gt; &lt;simple datum&gt; | &lt;compound datum&gt; 
+&lt;datum&gt; --&gt; &lt;simple datum&gt; | &lt;compound datum&gt;
 
 </pre>
 <p>Is replaced by the following five productions.</p>
@@ -124,7 +129,7 @@ section 7 of R5RS, except that the single production
 
 &lt;defined datum&gt; --&gt; #&lt;indexnum&gt;#
 
-&lt;nondefining datum&gt; --&gt; &lt;simple datum&gt; | &lt;compound datum&gt; 
+&lt;nondefining datum&gt; --&gt; &lt;simple datum&gt; | &lt;compound datum&gt;
 
 &lt;indexnum&gt; --&gt; &lt;digit 10&gt;+
 </pre>
@@ -143,7 +148,7 @@ Writes a written representation of obj to the given port. Strings that
 appear in the written representation are enclosed in doublequotes, and
 within those strings backslash and doublequote characters are escaped
 by backslashes. Character objects are written using the #\
-notation. 
+notation.
 
 </p><p>
 
@@ -329,14 +334,14 @@ operations if you have access to the system's internals.
       (cond ((interesting? obj)
 	     (let ((val (cdr (assq obj alist))))
 	       (cond ((not val) (write-interesting alist))
-		     ((number? val) 
+		     ((number? val)
 		      (begin (display "#" outport)
 			     (write val outport)
 			     (display "#" outport) alist))
 		     (else
 		      (let ((n (+ 1 (cdar alist))))
 			(begin (display "#" outport)
-			       (write n outport) 
+			       (write n outport)
 			       (display "=" outport))
 			(write-interesting (acons obj n alist)))))))
 	    (else (write obj outport) alist)))
@@ -593,7 +598,7 @@ operations if you have access to the system's internals.
 
 
 <h2>Copyright</h2>
-<p>Copyright (C) Ray Dillinger 2003. All Rights Reserved.</p>
+<p>&copyr; 2003 Ray Dillinger.</p>
 
 <p>
 Permission is hereby granted, free of charge, to any person obtaining
@@ -617,12 +622,7 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </p>
-
     <hr />
     <address>Editor: <a href="mailto:srfi%20minus%20editors%20at%20srfi%20dot%20schemers%20dot%20org">David Rush</a></address>
-<!-- Created: Tue Sep 29 19:20:08 EDT 1998 -->
-<!-- hhmts start -->
-Last modified: Wed Jan 19 08:52:24 MET 2011
-<!-- hhmts end -->
   </body>
 </html>

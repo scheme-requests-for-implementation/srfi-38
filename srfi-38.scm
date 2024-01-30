@@ -1,3 +1,7 @@
+;; SPDX-FileCopyrightText: 2015 Ray Dillinger
+;;
+;; SPDX-License-Identifier: MIT
+
 (define (write-with-shared-structure obj . optional-port)
   (define (acons key val alist)
     (cons (cons key val) alist))
